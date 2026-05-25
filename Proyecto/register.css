@@ -1,0 +1,333 @@
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    animation: slideDown 0.4s ease;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #444;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.modal-content input:focus {
+    border-color: #4F4D4D;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79, 77, 77, 0.4);
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #4F4D4D, #2c2c2c);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    background: linear-gradient(135deg, #05f579, #05f579);
+    transform: translateY(-2px);
+}
+
+.modal-content #mensaje {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.about {
+    padding: 60px 10%;
+    background: #f4f4f4;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-video {
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.text {
+    max-width: 500px;
+}
+
+
+/*El boton de las 3 imagenes osea el diviendo*/
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.main-btn {
+    padding: 14px 40px;
+    background: #f0f0f0;
+    color: rgb(14, 13, 13);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.main-btn:hover {
+    background: #13ef6e;
+    transform: translateY(-3px);
+}
+
+
+.arbustos {
+    text-align: center;
+    padding: 60px 10%;
+    background: #f5f5f5;
+}
+
+.titulo-seccion {
+    display: inline-block;
+    background: #4e7d5b;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 28px;
+    margin-bottom: 60px;
+}
+
+.circulos-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.circulo-item img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.circulo-item img:hover {
+    transform: scale(1.08);
+}
+
+.arbustos {
+    background: rgb(255, 251, 251);
+    padding: 80px 0;
+    overflow: hidden;
+    text-align: center;
+}
+/* Contenedor visible */
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Pista del carrusel */
+.carousel-track {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+/* Movimiento exacto */
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Imágenes */
+.circulo-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Fondo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del login */
+.login-container {
+    background: #ffffff;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título */
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Labels */
+.login-container label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Inputs */
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #4F4D4D;
+    box-shadow: 0 0 5px rgba(79,77,77,0.5);
+}
+
+/* Botón */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: #0fe653;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #2f2e2e;
+}
+
+/* Mensaje */
+#mensaje {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

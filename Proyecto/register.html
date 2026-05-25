@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="registro-container">
+        <h2>Registrarse</h2>
+        <form id="registro-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="correo_electronico">Correo Electrónico:</label>
+            <input type="email" id="correo_electronico" name="correo_electronico" required>
+            
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+            
+            <button type="submit">Registrarse</button>
+        </form>
+        <div id="mensaje"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+           // Enviar formulario con AJAX
+$('#registro-form').submit(function(event) {
+    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+    $.ajax({
+        type: 'POST',
+        url: 'register.php',
+        data: $(this).serialize(),
+        success: function(response) {
+            $('#mensaje').html(response);
+            $('#registro-form')[0].reset(); // Reiniciar el formulario
+        },
+        error: function() {
+            $('#mensaje').html('Ocurrió un error. Por favor, inténtelo de nuevo.');
+        }
+    
+    });
+});
+});
+
+       </script>  
+    </script>
+</body>
+</html>
