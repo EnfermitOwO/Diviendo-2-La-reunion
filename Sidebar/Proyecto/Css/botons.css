@@ -1,0 +1,43 @@
+/* botones.css */
+
+.btn-donate-small {
+    /* 1. Reset completo para evitar el 'link feo' */
+    display: inline-block !important;
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+
+    /* 2. Colores base (Forzados con !important) */
+    background-color: #00ff44 !important; /* Verde Neón */
+    color: #000000 !important;           /* Texto Negro */
+    
+    /* 3. Forma y Espaciado */
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-family: 'Arial', sans-serif !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    
+    /* 4. Alineación y Comportamiento */
+    transition: all 0.3s ease-in-out !important;
+    white-space: nowrap !important;
+    box-shadow: 0 4px 10px rgba(0, 255, 68, 0.2) !important;
+}
+
+/* Evita que se vuelva morado si ya hiciste click */
+.btn-donate-small:visited, 
+.btn-donate-small:active {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.btn-donate-small:hover {
+    background-color: #000000 !important; /* Cambia a negro */
+    color: #00ff44 !important;           /* Texto cambia a verde */
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 20px rgba(0, 255, 68, 0.6) !important; /* Brillo neón */
+}

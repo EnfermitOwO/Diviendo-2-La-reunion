@@ -1,0 +1,229 @@
+/* --- RESET Y BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background: #000; }
+
+/* --- HEADER --- */
+header { width: 100%; background: #2c2c2c; padding: 18px 60px; position: fixed; top: 0; z-index: 1000; }
+header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: #00cc36; font-size: 22px; font-weight: bold; }
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav ul li a { text-decoration: none; color: #00cc36; font-weight: bold; }
+
+/* --- SECCIÓN DE CARDS --- */
+.cards-section { background: #e5e7eb; padding: 120px 40px; min-height: 100vh; }
+.cards-container { max-width: 1200px; margin: auto; display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+
+.card { background: white; width: 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: 0.3s; }
+.card:hover { transform: translateY(-10px); }
+
+.card-image { height: 200px; background: url("https://d6isf1yxni2j5.cloudfront.net/large_inauguran_primera_etapa_del_parque_lineal_en_santa_catarina_c29fc0b2af.jpg") center/cover; position: relative; }
+.img2 { background: url("https://i.pinimg.com/736x/e8/af/59/e8af592ef9dc048fa2c13d57c32849b2.jpg") center/cover; }
+.favorite { position: absolute; top: 15px; right: 15px; cursor: pointer; }
+
+.card-content { padding: 20px; }
+.price { font-size: 24px; margin: 5px 0; color: #333; }
+.address { color: #666; font-size: 14px; }
+
+.card-details { display: flex; justify-content: space-between; padding: 15px 20px; border-top: 1px solid #eee; font-size: 13px; }
+
+/* --- SECCIÓN DEL PERFIL Y BOTÓN (AQUÍ ESTÁ EL CAMBIO) --- */
+/* Contenedor del pie de la tarjeta */
+.card-realtor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Esto separa el nombre del botón */
+    padding: 15px 20px;
+    background: #f3f4f6;
+}
+
+.realtor-info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* AQUÍ ESTÁ EL ARREGLO PARA EL BOTÓN */
+.btn-donate-small {
+    /* Reseteo de estilos de enlace */
+    text-decoration: none !important;
+    outline: none;
+    
+    /* Colores y forma */
+    background-color: #00ff44 !important; /* Verde neón */
+    color: #000000 !important;           /* Texto negro siempre */
+    padding: 8px 16px;
+    border-radius: 6px;
+    
+    /* Tipografía */
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+    
+    /* Animación */
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* Evita que cambie a morado al hacerle clic */
+.btn-donate-small:visited {
+    color: #000000 !important;
+}
+
+/* Efecto cuando pasas el mouse */
+.btn-donate-small:hover {
+    background-color: #000000 !important;
+    color: #00ff44 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 68, 0.4);
+}
+
+.realtor-img { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background: url("https://i.pinimg.com/736x/25/29/72/2529721e1f498bcc7d3088aec9826048.jpg") center/cover; 
+}
+
+.realtor-name { font-weight: bold; font-size: 14px; }
+.realtor-phone { font-size: 12px; color: #666; }
+
+/* --- EL BOTÓN DE DONAR --- */
+.btn-donate-small {
+    background-color: #00ff44 !important; /* Verde neón */
+    color: #000 !important;               /* Texto negro */
+    text-decoration: none !important;     /* Quita el morado y subrayado */
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-donate-small:hover {
+    background-color: #000 !important;
+    color: #00ff44 !important;
+    transform: scale(1.05);
+}
+
+/* MODAL */
+
+
+
+/* --- ARREGLO PARA MODALES FLOTANTES --- */
+
+/* --- MODAL ESTILIZADO (COPIA ESTO) --- */
+
+/* FONDO OSCURO DEL MODAL */
+.modal {
+    display: none; /* Se oculta por defecto, jQuery lo mostrará */
+    position: fixed; /* Se mantiene fijo sobre la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
+    z-index: 10001; /* Mayor que el header para estar por encima */
+    justify-content: center; /* Centrado horizontal con Flexbox */
+    align-items: center; /* Centrado vertical con Flexbox */
+    overflow-y: auto; /* Permite scroll si el contenido es largo */
+}
+
+/* CAJA DEL MODAL */
+.modal-content {
+    background: #ffffff; /* Fondo blanco */
+    width: 90%; /* Ancho responsivo */
+    max-width: 400px; /* Ancho máximo para que no se vea muy grande */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 12px; /* Esquinas redondeadas suaves */
+    text-align: center; /* Centrado del texto */
+    position: relative; /* Para posicionar la 'X' */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    animation: modalFadeIn 0.3s ease-out; /* Animación de entrada */
+}
+
+/* ANIMACIÓN DE ENTRADA */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Empieza un poco más arriba */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* BOTÓN X PARA CERRAR */
+.modal-content span {
+    position: absolute;
+    top: 15px;
+    right: 20px; /* Posicionado a la derecha, más intuitivo */
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s; /* Transición suave al pasar el mouse */
+}
+
+.modal-content span:hover {
+    color: #333; /* Oscurece la 'X' al pasar el mouse */
+}
+
+/* TÍTULO DEL MODAL */
+.modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 25px; /* Espacio debajo del título */
+    color: #2c2c2c;
+    font-weight: 600;
+}
+
+/* INPUTS DENTRO DEL MODAL (CRÍTICO PARA APILAR VERTICALMENTE) */
+.modal-content input {
+    width: 100%; /* Ocupa todo el ancho de la caja */
+    display: block; /* Obliga a que los inputs se apilen verticalmente */
+    padding: 12px 15px; /* Espaciado interno más amplio */
+    margin: 10px 0; /* Margen superior e inferior para separarlos */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border: 1px solid #ddd; /* Borde sutil */
+    font-size: 16px;
+    outline: none; /* Quita el borde por defecto al enfocar */
+    transition: border-color 0.2s; /* Transición para el enfoque */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* INPUT EN ENFOQUE */
+.modal-content input:focus {
+    border-color: #00ff44; /* Borde verde neón al escribir */
+}
+
+/* BOTÓN DEL FORMULARIO */
+.modal-content button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Texto blanco por defecto */
+    background: #2c2c2c; /* Fondo oscuro por defecto */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transición para el hover */
+}
+
+/* HOVER DEL BOTÓN - AQUÍ SE VUELVE VERDE NEÓN */
+.modal-content button:hover {
+    background-color: #00ff44; /* Fondo verde neón */
+    color: #000000; /* Texto negro para contraste */
+    box-shadow: 0 4px 12px rgba(0, 255, 68, 0.4); /* Sombra brillante */
+}
+
+/* MENSAJES DE ERROR/ÉXITO */
+#mensaje, #mensajeLogin {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}

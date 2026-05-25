@@ -1,0 +1,392 @@
+/* =========================
+   RESET BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #333;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343030;
+    padding: 1em 2em;
+    color: #00ff44;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* NAV */
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1.5em;
+}
+
+header nav ul li a {
+    color: #00ff44;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 0.5em;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+    background-color: #75868680;
+    border-radius: 5px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: -260px;
+    width: 260px;
+    height: calc(100vh - 70px);
+    background: #2b2b2b;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    color: #00ff44;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.sidebar a:hover {
+    color: #fff;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 998;
+}
+
+.sidebar.active ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+
+.video-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    padding: 2em;
+    border-radius: 10px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
+    padding: 60px 10%;
+    background: #f4f4f4;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-video {
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.text {
+    max-width: 500px;
+}
+
+/* =========================
+   ARBUSTOS / CARRUSEL
+========================= */
+.arbustos {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.titulo-seccion {
+    display: inline-block;
+    background: #4e7d5b;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 28px;
+    margin-bottom: 60px;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 60px;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.circulo-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.circulo-item img:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.main-btn {
+    padding: 14px 40px;
+    background: #f0f0f0;
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.main-btn:hover {
+    background: #00ff44;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   MODAL REGISTRO
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    animation: slideDown 0.4s ease;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #4F4D4D, #2c2c2c);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    background: #00ff44;
+    transform: translateY(-2px);
+}
+
+#mensaje {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.circulos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* espacio entre imágenes */
+    flex-wrap: wrap; /* para que bajen en celular */
+}
+/* Sección del Perfil en el Sidebar */
+.user-profile-header {
+    padding: 20px 10px;
+    text-align: center;
+    background: #222; /* Un poco más claro que el fondo del sidebar */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.sidebar-profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00ff44; /* Tu color verde neón */
+    margin-bottom: 10px;
+}
+
+.sidebar-username {
+    color: white;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile-link {
+    font-size: 0.85em !important;
+    color: #aaa !important;
+    text-decoration: underline !important;
+}
+
+.logout-btn {
+    font-size: 0.85em !important;
+    color: #ff4d4d !important; /* Rojo para el logout */
+    margin-top: 5px;
+}
+
+.sidebar-divider {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin: 15px 0;
+}
+
+/* Ajustes de navegación */
+.sidebar-nav a {
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar-nav a:hover {
+    background: rgba(7, 248, 39, 0.1);
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="EI=edge">
+
+
+<!--================ CSS =============-->
+<link rel="stylesheet" href="Css/Style.css">
+
+<!--======== Boxicons CSS ============-->
+<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+
+
+<title> Dividendo la venganza</title>
+</head>
+<body>
+
+    
+    <!-- Aqui empieza el codigo del sidebard-->
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img src="logo.png" alt="logo">
+            </span>
+          <div class="text header-text">
+                <span class="name">Y esta mafudada?</span>
+                <span class="profession">No se bro</span>
+            </div>
+        </div>
+        <i class ="bx bx-chevron-right toggle"></i> <!-- Esta cosa es el boton del side bar osea el > -->
+    </header>
+ 
+    <!-- Aqui estan los segmentos del sidebar-->
+         <!-- Busqueda-->
+    <div class="menu-bar">
+        <div class="menu">
+             <li class="search-box">
+                        <i class="bx bx-search icon"></i>
+                        <input type="search" placeholder="Search...">
+                    </a>
+                        <!-- nose-->
+                </li>
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="Index.php">
+                        <i class="bx bx-home-alt icon"></i>
+                        <span class="text nav-text">Casitá</span>
+                    </a>
+                        <!-- Aqui estan los segmentos del sidebar-->
+                              </li>
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="Proyecto/informacion.html">
+                        <i class="bx bx-home-alt icon"></i>
+                        <span class="text nav-text">Perfil</span>
+                    </a>
+                             <!-- Aqui estan los segmentos del sidebar-->
+                                   </li>
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#">
+            <i class='bx bxs-tree-alt icon'></i>
+                
+            
+                        <span class="text nav-text">Garcianos</span>
+                    </a>
+                                  <!-- Aqui estan los segmentos del sidebar-->
+                                        </li>
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class="bx bx-heart icon"></i>
+                        <span class="text nav-text">Santa chad</span>
+                    </a>
+
+                        <!-- nose-->
+
+                         </li>
+            <ul class="menu-links">
+               
+            </ul>
+        </div> 
+
+
+        <div class="bottom-content">
+
+         <li class="">
+                    <a href="#">
+                        <i class="bx bx-log-in icon"></i>
+                        <span class="text nav-text">Iniciar Sesión</span>
+                    </a>
+                </li>
+
+                 <li class="mode">
+                    <div class="moon-sun">
+                           <i class="bx bx-moon icon moon"></i>
+                             <i class="bx bx-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text"> Dark Mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+     </div>
+        
+    </div>
+
+<!-- aqui termina -->   
+     
+</nav>
+<section class = "home">
+    <div class="text">Casita</div>
+    
+</section>
+
+
+
+ <script src="script.js"></script>
+</body>
+</html>

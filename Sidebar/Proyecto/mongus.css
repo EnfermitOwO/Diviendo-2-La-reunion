@@ -1,0 +1,322 @@
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #333;
+        font-size: 16px;
+   
+}
+
+   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    color: #00ff44;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    flex-direction: row !important; 
+}
+
+header.scrolled {
+    background-color: #343030;
+}
+
+header .logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00ff44;
+    cursor: pointer;
+}
+header .logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00ff44;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row !important; 
+    gap: 12px;
+}
+header nav ul li a {
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 6px 12px;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #00ff44;
+}
+.btn-inicio-style {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+}
+
+    .btn-green-style {
+        color: #00ff44 !important;
+    }   
+
+   header nav ul li a:hover {
+    background-color: rgba(0, 255, 68, 0.2);
+    color: #fff !important;
+}
+
+  /* =========================
+   ESTILOS PERFIL SIDEBAR (EL PARCHE)
+   ========================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: #1a1a1a;
+    padding: 20px;
+    transition: 0.3s ease;
+    z-index: 2000;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.8);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+
+
+
+
+/* --- SECCIÓN HERO --- */
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3em;
+    border-radius: 20px;
+    z-index: 1;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 68, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+    @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 { font-size: 3em; margin-bottom: 0.5em; color: var(--verde-neon); }
+.hero p { font-size: 1.2em; margin-bottom: 1.5em; color: #ccc; }
+
+/* --- 7. SECCIÓN ABOUT & BOTÓN ODS --- */
+.about {
+    background-color: var(--blanco);
+    padding: 100px 0;
+    color: #333;
+}
+
+.about .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 50px;
+    padding: 20px;
+}
+
+.about img {
+    max-width: 45%;
+    border-radius: 20px;
+    transition: var(--transition-slow);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.about img:hover { transform: scale(1.03) translateY(-10px); }
+
+.about .text { max-width: 50%; }
+.about h2 { font-size: 2.5em; margin-bottom: 20px; color: var(--gris-texto); }
+.about p { font-size: 1.1em; margin-bottom: 20px; color: #555; }
+
+/* BOTÓN ODS (REPARADO) */
+.main-btn, .about .btn {
+    display: inline-block;
+    background-color: #c5cdd6; /* Gris de tu diseño */
+    color: #000 !important;
+    padding: 14px 30px;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.main-btn:hover {
+    background-color: var(--verde-neon);
+    color: #000 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 68, 0.4);
+}
+
+/* --- 8. PRODUCTOS Y CARDS --- */
+.products {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+    text-align: center;
+    color: #333;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    flex: 1 1 300px;
+    max-width: 350px;
+    transition: var(--transition-fast);
+    border: 1px solid #eee;
+}
+
+.product-card:hover { 
+    transform: translateY(-15px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: var(--verde-neon);
+}
+
+.product-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+/* --- 9. TABLAS DE ADMINISTRACIÓN --- */
+.table-container {
+    width: 90%;
+    margin: 50px auto;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#usuarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #333;
+}
+
+#usuarios-table th {
+    background-color: var(--verde-neon);
+    color: #000;
+    padding: 20px;
+    text-align: left;
+    font-weight: 700;
+}
+
+#usuarios-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#usuarios-table tr:hover { background-color: #f9f9f9; }
+
+/* --- 10. BOTONES DE ACCIÓN (LOGIN/REGISTRO) --- */
+.modal-btn {
+    padding: 10px 25px;
+    background: var(--verde-neon);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* --- 11. RESPONSIVE MASTER --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+
+    .logo { font-size: 1rem !important; }
+
+    header nav ul { gap: 8px; }
+
+    header nav ul li a {
+        font-size: 0.75rem !important;
+        padding: 5px 8px !important;
+    }
+
+    .about .content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about img, .about .text {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero h1 { font-size: 2.2em; }
+    
+    .sidebar { width: 250px; }
+}
+
+/* --- 12. DECORACIÓN FINAL (LLENADO) --- */
+footer {
+    background: #111;
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+    border-top: 1px solid #222;
+}
